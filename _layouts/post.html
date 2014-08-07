@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<!-- details at top of post -->
+<div class="top-details">
+    <div class="timestamp">Posted on {{ page.date | date_to_long_string }} in {{ page.categories | array_to_sentence_string }}</div>
+</div>
+
+<div class="post">
+{{ content }}
+</div>
+
+<!-- details at bottom of post -->
+<div class="bottom-details">
+    {% include pagination-posts.html %}
+</div>

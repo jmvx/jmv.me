@@ -1,0 +1,233 @@
+/* Changing some defaults */
+body, p, ul { margin:0; padding:0; }
+
+body {
+    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+    background-color:rgb(240,240,240);
+    color:black;
+    border-top:5px solid gray;
+    font-size:14pt;
+}
+
+p, li { line-height:150%; }
+
+p { margin:0px 0px 20px 0px; }
+
+li { list-style-type:none; }
+
+img, .thumbnail { border:1px solid #d3d3d3; }
+
+li:before {
+    content:"☘";
+    margin-right:10px;
+    color:green;
+}
+
+ul {
+    margin-bottom:20px;
+    padding-left:40px;
+}
+
+a, .separator {
+    text-decoration:none;
+    color:gray;
+}
+
+.separator { color:green; }
+
+a:hover { color:black; }
+
+h1, h2, h3, h4, h5 h6 { font-weight:normal; }
+
+/* Centers blog in middle of page */
+#container {
+    margin:0 auto 0 auto;
+    width:800px;
+}
+
+/* Header */
+#site-title, #navigation, .top-details, .bottom-details {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+h1, .excerpt > a { font-size:20pt; }
+
+h2, h3, h4, h5, h6 { font-size:16pt; }
+
+#site-title { font-weight:bold; }
+
+#navigation { font-size:12pt; }
+
+#header {
+    height:100px;
+    position:relative;
+}
+
+#site-title, #navigation {
+    position:absolute;
+    bottom:0;
+}
+
+#site-title {
+    left:0;
+    font-size:34pt;
+}
+
+#navigation {
+    right:0;
+    bottom:6px;
+}
+
+#navigation > div {
+    display:inline-block;
+}
+
+#navigation > div > a {
+    padding:10px;
+    margin-left:3px;
+}
+
+a.last {
+    padding-right:0px !important;
+}
+
+/* Blog Content */
+#content {
+    width:800px;
+    margin:35px 0 35px 0;
+}
+
+.page-title {
+    font-size:30pt;
+    margin-bottom:35px;
+}
+
+.top-details {
+    position:relative;
+    height:25px;
+    font-size:8pt;
+    color:gray;
+}
+
+.top-details .timestamp {
+    position:absolute;
+    top:-30px;
+    left:0;
+}
+
+.bottom-details .pagination {
+    text-align:center;
+    font-size:18pt;
+    font-style:italic;
+    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+    margin-top:40px;
+    clear:both;
+}
+
+.previous-none, .next-none { color:#d3d3d3; }
+
+/* Posts and Excerpts */
+p.right { text-align:right; }
+
+p.center { text-align:center; }
+
+.excerpt { clear:both; }
+
+.excerpt > p { margin-top:5px; }
+
+.excerpt > img.left, .excerpt > img.center, .excerpt > img.right, .excerpt > img.medium, .excerpt > img.large, .excerpt > a > img {
+    display:none !important; /* so images in posts don't appear in excerpts */
+}
+
+.excerpt-date {
+    display:inline-block;
+    margin-left:20px;
+    font-size:8pt;
+    color:gray;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+div.blockquote {
+    display:inline-block;
+    border-left:5px solid #d3d3d3;
+    padding-left:20px;
+    margin-bottom:20px;
+}
+
+.author:before {
+    content:"☘";
+    margin-right:18px;
+    color:green;
+}
+
+.author {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size:12pt;
+}
+
+/* Archive page */
+.archive-date {
+    width:150px;
+    display:inline-block;
+    text-align:right;
+    padding-right:40px;
+}
+
+/* Image Layouts */
+img { float:left; }
+
+img.right {
+    float:right;
+    margin-left:20px;
+}
+
+.double {
+    float:none;
+    display:inline-block;
+    width:395px;
+    margin-bottom:20px;
+    vertical-align:top;
+}
+
+img.large {
+    width:100%;
+    margin-bottom:20px;
+}
+
+img.medium {
+    width:50%;
+    margin-right:20px;
+    margin-bottom:20px;
+}
+
+img.small {
+    width:100%;
+    min-height:100%;
+    border:none;
+}
+
+.thumbnail {
+    width:200px;
+    height:135px;
+    overflow:hidden;
+    margin-right:20px;
+    margin-bottom:20px;
+    float:left;
+}
+
+img.center, iframe.center {
+    float:none;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+iframe.center {
+    width:500px;
+    height:281px;
+    margin-bottom:20px;
+}
+
+div.pinterest {
+    text-align:center;
+}

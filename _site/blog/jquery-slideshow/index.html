@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/syntax.css">
+    <title>jmv.me
+         | My first jQuery slideshows</title>
+        
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="site-title">Julia M. Van Cleve</div>
+            <div id="navigation"><div class="nav-link"><a href="/">About Me</a></div>
+<div class="separator">&#9752;</div>
+<div class="nav-link"><a href="/blog/">Blog</a></div>
+<div class="separator">&#9752;</div>
+<div class="nav-link"><a href="/portfolio/">Portfolio</a></div>
+<div class="separator">&#9752;</div>
+<div class="nav-link"><a class="last" href="/archive/">Archive</a></div></div>
+        </div>
+        <div id="content">
+            <div class="page-title">My first jQuery slideshows</div>
+            <!-- details at top of post -->
+<div class="top-details">
+    <div class="timestamp">Posted on 24 January 2014 in education and programming</div>
+</div>
+
+<div class="post">
+<p> Version 1 is the original slideshow.js that I created for my websites. Version 2 is a more energy efficient slideshow.js using keyframes.</p>
+
+<div class="highlight"><pre><code class="javascript">    <span class="c1">// Version 1 of Slideshow.js</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="kd">function</span> <span class="nx">slideshow</span><span class="p">(</span><span class="nx">pictures</span><span class="p">,</span><span class="nx">speed</span><span class="p">){</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nx">pictures</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">){</span>
+      <span class="kd">var</span> <span class="nx">apic</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">prev</span> <span class="o">=</span> <span class="p">(</span><span class="nx">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">?</span> <span class="nx">$</span><span class="p">(</span><span class="nx">pictures</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">:</span> <span class="nx">apic</span><span class="p">.</span><span class="nx">prev</span><span class="p">();</span>
+
+      <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">prev</span><span class="p">.</span><span class="nx">promise</span><span class="p">().</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+          <span class="nx">prev</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
+        <span class="p">});</span>
+        <span class="nx">apic</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
+        <span class="nx">apic</span><span class="p">.</span><span class="nx">fadeIn</span><span class="p">(</span><span class="nx">speed</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+          <span class="nx">prev</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+        <span class="p">});</span>
+      <span class="p">},</span><span class="nx">index</span><span class="o">*</span><span class="nx">speed</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+  <span class="kd">var</span> <span class="nx">numpics</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">// change for more than 3 images</span>
+  <span class="kd">var</span> <span class="nx">speed</span> <span class="o">=</span> <span class="mi">4000</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">pictures</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.slideshow&#39;</span><span class="p">);</span>
+
+  <span class="nx">slideshow</span><span class="p">(</span><span class="nx">pictures</span><span class="p">,</span><span class="nx">speed</span><span class="p">);</span>
+  <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">slideshow</span><span class="p">(</span><span class="nx">pictures</span><span class="p">,</span><span class="nx">speed</span><span class="p">);</span>
+  <span class="p">},</span><span class="nx">numpics</span><span class="o">*</span><span class="nx">speed</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<div class="highlight"><pre><code class="javascript">    <span class="c1">// Version 2 of Slideshow.js</span>
+<span class="kd">function</span> <span class="nx">jmvxApplySlideshow</span><span class="p">(</span><span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">target</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">target</span><span class="p">);</span>
+
+  <span class="c1">// Keep a counter for the images that have yet to load, i.e., those without</span>
+  <span class="c1">// src=&quot;blah.jpg&quot; attributes</span>
+  <span class="kd">var</span> <span class="nx">notloaded</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;img:not([src])&#39;</span><span class="p">,</span> <span class="nx">target</span><span class="p">);</span>
+  <span class="nx">target</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;counter&#39;</span><span class="p">,</span> <span class="nx">notloaded</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+
+  <span class="c1">// After all images are loaded, we can set up the CSS to animate</span>
+  <span class="nx">target</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;onLoadComplete&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">imgs</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">,</span> <span class="nx">target</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">imgs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;showduration&#39;</span><span class="p">));</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;fadeduration&#39;</span><span class="p">));</span>
+    <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">)</span> <span class="o">*</span> <span class="nx">n</span><span class="p">;</span>
+
+    <span class="c1">// Add CSS to each image</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">imgs</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">$</span><span class="p">(</span><span class="nx">item</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span>
+        <span class="s1">&#39;animation-name&#39;</span><span class="o">:</span> <span class="s1">&#39;jmvxSlideshow&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;animation-timing-function&#39;</span><span class="o">:</span> <span class="s1">&#39;ease-in-out&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;animation-iteration-count&#39;</span><span class="o">:</span> <span class="s1">&#39;infinite&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;animation-duration&#39;</span><span class="o">:</span> <span class="nx">t</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span>
+
+        <span class="c1">// The last image added occludes the others, so we start its animation</span>
+        <span class="c1">// first</span>
+        <span class="s1">&#39;animation-delay&#39;</span><span class="o">:</span> <span class="p">((</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)).</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;s&#39;</span>
+      <span class="p">});</span>
+    <span class="p">});</span>
+
+    <span class="c1">// Create the keyframes for the animation</span>
+    <span class="c1">// Based on http://css3.bradshawenterprises.com/cfimg/</span>
+    <span class="kd">var</span> <span class="nx">keyframes</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+    <span class="p">[</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;-webkit-&#39;</span><span class="p">,</span> <span class="s1">&#39;-moz-&#39;</span> <span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">prefix</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">keyframes</span> <span class="o">+=</span> <span class="s1">&#39;@&#39;</span> <span class="o">+</span> <span class="nx">prefix</span> <span class="o">+</span> <span class="s1">&#39;keyframes jmvxSlideshow {\n&#39;</span><span class="p">;</span>
+      <span class="nx">keyframes</span> <span class="o">+=</span> <span class="s1">&#39;\t0% { opacity: 1; }\n&#39;</span><span class="p">;</span>
+      <span class="nx">keyframes</span> <span class="o">+=</span> <span class="s1">&#39;\t&#39;</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="nx">a</span><span class="o">/</span><span class="nx">t</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;% { opacity: 1; }\n&#39;</span><span class="p">;</span>
+      <span class="nx">keyframes</span> <span class="o">+=</span> <span class="s1">&#39;\t&#39;</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mi">100</span><span class="o">/</span><span class="nx">n</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;% { opacity: 0; }\n&#39;</span><span class="p">;</span>
+      <span class="nx">keyframes</span> <span class="o">+=</span> <span class="s1">&#39;\t&#39;</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="nx">b</span><span class="o">/</span><span class="nx">t</span><span class="p">)))</span> <span class="o">+</span> <span class="s1">&#39;% { opacity: 0; }\n&#39;</span><span class="p">;</span>
+      <span class="nx">keyframes</span> <span class="o">+=</span> <span class="s1">&#39;\t100% { opacity: 1; }\n&#39;</span><span class="p">;</span>
+      <span class="nx">keyframes</span> <span class="o">+=</span> <span class="s1">&#39;}\n\n&#39;</span><span class="p">;</span>
+    <span class="p">});</span>
+    <span class="nx">target</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;style type=&quot;text/css&quot; scoped&gt;&#39;</span> <span class="o">+</span> <span class="nx">keyframes</span> <span class="o">+</span> <span class="s1">&#39;&lt;/style&gt;&#39;</span><span class="p">));</span>
+  <span class="p">});</span>
+
+  <span class="c1">// Load each image, decrementing the counter as they load, and then trigger</span>
+  <span class="c1">// onLoadComplete() when all are loaded</span>
+  <span class="nx">notloaded</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">img</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">img</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">target</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;counter&#39;</span><span class="p">,</span> <span class="nx">target</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;counter&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;counter&#39;</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="nx">target</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;onLoadComplete&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">img</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">img</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;slidesrc&#39;</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">// When the document is loaded, initialize each slideshow on the page</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.slideshow&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">jmvxApplySlideshow</span><span class="p">(</span><span class="nx">target</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+
+<!-- details at bottom of post -->
+<div class="bottom-details">
+    <!-- Pagination Links -->
+<div class="pagination">
+  
+    <a href="/blog/egosurfing" class="previous">&#8604; Previous</a>
+  
+  
+  
+    <a href="/blog/learning-ruby" class="next">Next &#8605;</a>
+  
+</div>
+</div>
+
+        </div>
+    </div>
+</body>
+
+</html>

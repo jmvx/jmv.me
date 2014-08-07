@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+ 
+def settings_check(setting)
+  print "Include #{setting}? (yes or no): "
+  user_input = gets.chomp
+  abort("Please respond 'yes' or 'no'") unless user_input == 'yes' or user_input == 'no'
+  user_input == 'yes' ? true : false
+end
+ 
+print 'How many characters? (Your password must be at least 8 characters): '
+num_char = gets
+abort('Password is not at least 8 characters') unless num_char.to_i >= 8
+ 
+lower = settings_check("lowercase")
+upper = settings_check("uppercase")
+num = settings_check("numbers")
+symb = settings_check("symbols")
+ 
+possible_char = ""
+settings = {letters: 'abcdefghijklmnopqrstuvwxyz', numbers: '0123456789', symbols: '`~!@#$%^&*()_-+='}
+ 
+possible_char += settings[:letters] if lower
+possible_char += settings[:letters].upcase if upper
+possible_char += settings[:numbers] if num
+possible_char += settings[:symbols] if symb
+ 
+rand_gen = Random.new
+password = num_char.to_i.times.map { possible_char[rand_gen.rand(possible_char.size)] }.join
+ 
+print "\n" + password + "\n\n"

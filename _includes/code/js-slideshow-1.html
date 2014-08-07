@@ -1,0 +1,27 @@
+// Version 1 of Slideshow.js
+$(document).ready(function(){
+  function slideshow(pictures,speed){
+    $(pictures).each(function(index){
+      var apic = $(this);
+      var prev = (index == 0) ? $(pictures).eq(-1) : apic.prev();
+
+      setTimeout(function(){
+        prev.promise().done(function(){
+          prev.removeClass('active');
+        });
+        apic.addClass('active');
+        apic.fadeIn(speed, function() {
+          prev.hide();
+        });
+      },index*speed);
+    });
+  }
+  var numpics = 3 // change for more than 3 images
+  var speed = 4000;
+  var pictures = $('.slideshow');
+
+  slideshow(pictures,speed);
+  setInterval(function () {
+    slideshow(pictures,speed);
+  },numpics*speed);
+});

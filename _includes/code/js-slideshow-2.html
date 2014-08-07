@@ -1,0 +1,65 @@
+// Version 2 of Slideshow.js
+function jmvxApplySlideshow(target) {
+  target = $(target);
+
+  // Keep a counter for the images that have yet to load, i.e., those without
+  // src="blah.jpg" attributes
+  var notloaded = $('img:not([src])', target);
+  target.data('counter', notloaded.length);
+
+  // After all images are loaded, we can set up the CSS to animate
+  target.on('onLoadComplete', function () {
+    var target = $(this);
+    var imgs = $('img', target);
+    var n = imgs.length;
+    var a = parseInt(target.data('showduration'));
+    var b = parseInt(target.data('fadeduration'));
+    var t = (a + b) * n;
+
+    // Add CSS to each image
+    $.each(imgs, function(i, item) {
+      $(item).css({
+        'animation-name': 'jmvxSlideshow',
+        'animation-timing-function': 'ease-in-out',
+        'animation-iteration-count': 'infinite',
+        'animation-duration': t.toString() + 's',
+
+        // The last image added occludes the others, so we start its animation
+        // first
+        'animation-delay': ((a + b) * (n - i - 1)).toString() + 's'
+      });
+    });
+
+    // Create the keyframes for the animation
+    // Based on http://css3.bradshawenterprises.com/cfimg/
+    var keyframes = '';
+    [ '', '-webkit-', '-moz-' ].forEach(function (prefix) {
+      keyframes += '@' + prefix + 'keyframes jmvxSlideshow {\n';
+      keyframes += '\t0% { opacity: 1; }\n';
+      keyframes += '\t' + Math.round(100*a/t) + '% { opacity: 1; }\n';
+      keyframes += '\t' + Math.round(100/n) + '% { opacity: 0; }\n';
+      keyframes += '\t' + Math.round(100*(1-(b/t))) + '% { opacity: 0; }\n';
+      keyframes += '\t100% { opacity: 1; }\n';
+      keyframes += '}\n\n';
+    });
+    target.append($('<style type="text/css" scoped>' + keyframes + '</style>'));
+  });
+
+  // Load each image, decrementing the counter as they load, and then trigger
+  // onLoadComplete() when all are loaded
+  notloaded.each(function(i, img) {
+    img.onload = function() {
+      target.data('counter', target.data('counter') - 1);
+      if (target.data('counter') === 0)
+        target.trigger('onLoadComplete');
+    }
+    img.src = $(img).data('slidesrc');
+  });
+}
+
+// When the document is loaded, initialize each slideshow on the page
+$(document).ready(function () {
+  $('.slideshow').each(function(i, target) {
+    jmvxApplySlideshow(target);
+  });
+});

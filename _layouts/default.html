@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+    {% endif %}
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/syntax.css">
+    <title>jmv.me
+        {% if page.title %} | {{ page.title }}</title>
+        {% else %} | {{ site.name }}</title>{% endif %}
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="site-title">{{ site.name }}</div>
+            <div id="navigation">{% include pages.html %}</div>
+        </div>
+        <div id="content">
+            <div class="page-title">{{ page.title }}</div>
+            {{ content }}
+        </div>
+    </div>
+</body>
+
+</html>

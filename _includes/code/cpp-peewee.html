@@ -1,0 +1,125 @@
+/*  Created by: Julia Van Cleve
+    Contact: julia@jmv.me"
+    Last Updated: May 24, 2010  */
+ 
+#include <iostream>
+#include <fstream> // For reading in /dev/random
+#include <string>
+ 
+//#include <unistd.h>
+ 
+#include <time.h>
+#include <stdlib.h>
+ 
+#define num_choices 3 // Change to increase the number of possible passwords created
+ 
+using std::cout;
+using std::cin;
+using std::endl;
+using std::cerr;
+using std::string;
+using std::ifstream;
+ 
+int main() {
+ 
+    cout << "********************" << endl;
+    cout << "* Peewee Generator *" << endl;
+    cout << "********************" << endl;
+    cout << endl;
+ 
+    // Keeps program on a loop until 'quit' is entered at the ending prompt
+    string stop_or_go;
+    while (stop_or_go != "quit") {
+ 
+        // Stores resulting passwords for output later
+        string choices[num_choices];
+ 
+        // Prompt the user for password criteria
+        long long int lower, upper, nums, symb, pwsize;
+        cout << "How many characters? ";
+        cin >> pwsize;
+        cout << "Include lowercase? (1 = yes, 0 = no): ";
+        cin >> lower;
+        cout << "Include uppercase? (1 = yes, 0 = no): ";
+        cin >> upper;
+        cout << "Include numbers? (1 = yes, 0 = no): ";
+        cin >> nums;
+        cout << "Include symbols? (1 = yes, 0 = no): ";
+        cin >> symb;
+        
+        // Error checking user input
+        int error_val = 0;
+        if (pwsize <= 0) {
+            cerr << "Please enter a password size greater than 0" << endl;
+            error_val = 1;
+        }
+        if (lower == 0 && upper == 0 && symb == 0 && nums == 0) {
+            cerr << "Please enter '1' for at least one property" << endl;
+            error_val = 1;
+        }
+        if (error_val == 1)
+            return 1;
+        
+        // Formulate list of possible characters
+        string possible;
+        string lowercase = "abcdefghijklmnopqrstuvwxyz";
+        string uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        string numbers = "0123456789";
+        string symbols = "`~!@#$%^&*()_-+=";
+        
+        if (lower == 1)
+                possible += lowercase;
+        if (upper == 1)
+                possible += uppercase;
+        if (nums == 1)
+                possible += numbers;
+        if (symb == 1)
+                possible += symbols;
+        
+        // Opens random file
+        ifstream randomFile;
+        randomFile.open("/dev/random");
+        if (!randomFile.is_open()) {
+            cerr << "Error while opening /dev/random" << endl;
+            return 1;
+        }
+        
+        // Creates passwords
+        string password;
+        int choice_it = 0;
+        while(choice_it < num_choices) {
+            unsigned char r;
+            randomFile >> r;
+            int slot = r%possible.size();
+            password += possible[slot];
+            if (password.size() == pwsize) {
+                choices[choice_it] = password;
+                password.clear();
+                choice_it++;
+            }
+        }
+        
+        // Outputs possible passwords
+        cout << endl;
+        cout << "Password Choices:" << endl;
+        for (unsigned int i = 0; i < num_choices; i++)
+            cout << choices[i] << endl;
+        cout << endl;
+        
+        // Asks user if they wish to exit or create new passwords
+        string command;
+        string prompt = "Type 'quit' to exit the program OR 'restart' to restart the program: ";
+        cout << prompt;
+        cin >> command;
+        while (command != "quit" && command != "restart") {
+            command.clear();
+            cout << prompt;
+            cin >> command;
+        }
+        // Sets stop_or_go to 'quit' and exits program
+        if (command == "quit")
+            stop_or_go = command;   
+        cout << endl; 
+    }
+    return 0;
+}

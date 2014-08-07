@@ -1,0 +1,9 @@
+---
+title: Portfolio
+layout: default
+description: My portfolio examples
+---
+
+{% for post in site.categories.portfolio %}
+    {% include post-excerpt.html %}
+{% endfor %}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/syntax.css">
+    <title>jmv.me
+         | Learning Ruby with Project Euler</title>
+        
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="site-title">Julia M. Van Cleve</div>
+            <div id="navigation"><div class="nav-link"><a href="/">About Me</a></div>
+<div class="separator">&#9752;</div>
+<div class="nav-link"><a href="/blog/">Blog</a></div>
+<div class="separator">&#9752;</div>
+<div class="nav-link"><a href="/portfolio/">Portfolio</a></div>
+<div class="separator">&#9752;</div>
+<div class="nav-link"><a class="last" href="/archive/">Archive</a></div></div>
+        </div>
+        <div id="content">
+            <div class="page-title">Learning Ruby with Project Euler</div>
+            <!-- details at top of post -->
+<div class="top-details">
+    <div class="timestamp">Posted on 24 January 2014 in programming and education</div>
+</div>
+
+<div class="post">
+<p>My favorite way to teach myself a new programming language is by completing <a href="http://projecteuler.net/" target="_blank">Project Euler</a> levels. Below, I have included some miscellaneous snippets of code I have used on Project Euler. I try not to share any spoilers, so my solutions are stored in a private repository on Github.</p>
+
+<div class="highlight"><pre><code class="ruby">    <span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">int</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">int</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="mi">1</span>
+  <span class="k">else</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.int</span><span class="p">)</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="ss">:*</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+<div class="highlight"><pre><code class="ruby">    <span class="k">def</span> <span class="nf">totient</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+  <span class="n">primef</span> <span class="o">=</span> <span class="no">Prime</span><span class="o">.</span><span class="n">prime_division</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+  <span class="n">tot</span> <span class="o">=</span> <span class="n">num</span>
+  <span class="n">primef</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span>
+    <span class="n">tot</span> <span class="o">*=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="nb">p</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">)</span>
+  <span class="k">end</span>
+  <span class="k">return</span> <span class="n">tot</span><span class="o">.</span><span class="n">to_i</span>
+<span class="k">end</span>
+</code></pre></div>
+
+<div class="highlight"><pre><code class="ruby">    <span class="k">def</span> <span class="nf">factor</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+  <span class="n">factors</span> <span class="o">=</span> <span class="nb">Array</span><span class="o">.</span><span class="n">new</span>
+  <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="no">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num</span><span class="p">))</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">y</span><span class="o">|</span> 
+    <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">then</span>
+       <span class="n">factors</span> <span class="o">&lt;&lt;</span> <span class="o">[</span><span class="n">y</span><span class="p">,</span><span class="n">num</span><span class="o">/</span><span class="n">y</span><span class="o">]</span> <span class="k">unless</span> <span class="no">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">==</span> <span class="n">y</span> <span class="c1">#or y == 1</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  <span class="k">return</span> <span class="n">factors</span>
+<span class="k">end</span>
+</code></pre></div>
+
+<div class="highlight"><pre><code class="ruby">    <span class="k">def</span> <span class="nf">itoa</span><span class="p">(</span><span class="n">int</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">int</span><span class="o">.</span><span class="n">to_s</span><span class="o">.</span><span class="n">chars</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="o">.</span><span class="n">to_i</span> <span class="p">}</span>
+<span class="k">end</span>
+</code></pre></div>
+</div>
+
+<!-- details at bottom of post -->
+<div class="bottom-details">
+    <!-- Pagination Links -->
+<div class="pagination">
+  
+    <a href="/blog/jquery-slideshow" class="previous">&#8604; Previous</a>
+  
+  
+  
+    <a href="/blog/bucket-list" class="next">Next &#8605;</a>
+  
+</div>
+</div>
+
+        </div>
+    </div>
+</body>
+
+</html>
