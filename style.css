@@ -9,9 +9,7 @@ body {
     font-size:14pt;
 }
 
-#content {
-    line-height:150%;
-}
+#content { line-height:150%; }
 
 p { margin:0px 0px 20px 0px; }
 
@@ -39,8 +37,6 @@ a, .separator {
 
 a:hover { color:black; }
 
-h1, h2, h3, h4, h5 h6 { font-weight:normal; }
-
 /* Centers blog in middle of page */
 #container {
     margin:0 auto 0 auto;
@@ -48,8 +44,9 @@ h1, h2, h3, h4, h5 h6 { font-weight:normal; }
 }
 
 /* Header */
-#site-title, #navigation, .top-details, .bottom-details {
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+#site-title, .top-details, .excerpt-date, .author, h1, h2, h3, h4, h5, h6, .excerpt > a, #navigation, .page-title {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-weight:normal;
 }
 
 h1, .excerpt > a { font-size:20pt; }
@@ -58,7 +55,7 @@ h2, h3, h4, h5, h6 { font-size:16pt; }
 
 #site-title { font-weight:bold; }
 
-#navigation { font-size:12pt; }
+#navigation { font-size:14pt; }
 
 #header {
     height:100px;
@@ -85,8 +82,8 @@ h2, h3, h4, h5, h6 { font-size:16pt; }
 }
 
 #navigation > div > a {
-    padding:10px;
-    margin-left:3px;
+    padding:12px 6px 12px 6px;
+    margin-left:0px;
 }
 
 a.last {
@@ -100,8 +97,9 @@ a.last {
 }
 
 .page-title {
-    font-size:30pt;
+    font-size:25pt;
     margin-bottom:35px;
+    font-weight:bold;
 }
 
 .top-details {
@@ -121,7 +119,6 @@ a.last {
     text-align:center;
     font-size:18pt;
     font-style:italic;
-    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
     margin-top:40px;
     clear:both;
 }
@@ -146,7 +143,6 @@ p.center { text-align:center; }
     margin-left:20px;
     font-size:8pt;
     color:gray;
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 
 div.blockquote {
@@ -163,7 +159,6 @@ div.blockquote {
 }
 
 .author {
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     font-size:12pt;
 }
 
