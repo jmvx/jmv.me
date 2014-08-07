@@ -9,7 +9,9 @@ body {
     font-size:14pt;
 }
 
-p, li { line-height:150%; }
+#content {
+    line-height:150%;
+}
 
 p { margin:0px 0px 20px 0px; }
 
@@ -135,7 +137,7 @@ p.center { text-align:center; }
 
 .excerpt > p { margin-top:5px; }
 
-.excerpt > img.left, .excerpt > img.center, .excerpt > img.right, .excerpt > img.medium, .excerpt > img.large, .excerpt > a > img {
+.excerpt > img.left, .excerpt > img.center, .excerpt > img.right, .excerpt > img.medium, .excerpt > img.large, .excerpt > a > img, .excerpt > h1, .excerpt > h2 {
     display:none !important; /* so images in posts don't appear in excerpts */
 }
 
@@ -174,11 +176,14 @@ div.blockquote {
 }
 
 /* Image Layouts */
-img { float:left; }
+img { 
+    float:left; 
+    margin:0 20px 15px 0;
+}
 
 img.right {
     float:right;
-    margin-left:20px;
+    margin:0 0 15px 20px;
 }
 
 .double {
@@ -187,17 +192,15 @@ img.right {
     width:395px;
     margin-bottom:20px;
     vertical-align:top;
+    margin-right:0;
 }
 
 img.large {
     width:100%;
-    margin-bottom:20px;
 }
 
 img.medium {
     width:50%;
-    margin-right:20px;
-    margin-bottom:20px;
 }
 
 img.small {
@@ -210,8 +213,7 @@ img.small {
     width:200px;
     height:135px;
     overflow:hidden;
-    margin-right:20px;
-    margin-bottom:20px;
+    margin:0 20px 20px 0;
     float:left;
 }
 
