@@ -152,6 +152,10 @@ div.blockquote {
     margin-bottom:20px;
 }
 
+div.blockquote > p, p.author {
+    margin-bottom:0px;
+}
+
 .author:before {
     content:"☘";
     margin-right:18px;
