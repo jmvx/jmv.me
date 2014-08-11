@@ -1,0 +1,60 @@
+/* iPhone, Android rules here */
+#site-title, #navigation {
+    display:block !important;
+    width:100% !important;
+    text-align:center !important;
+}
+
+#container, #content {
+    width:96% !important;
+}
+
+#header {
+    padding-bottom:35px !important;
+}
+
+img.medium {
+    width:100% !important;
+    float:none !important;
+    margin:0 0 20px 0 !important;
+    padding:0 !important;
+}
+
+.double {
+    display:block !important;
+}
+
+img.double {
+    width:100%;
+}
+
+.excerpt-date, div.timestamp {
+    display:block !important;
+    width:100% !important;
+    margin-left:0px !important;
+    font-size:12pt !important;
+}
+
+div.thumbnail {
+    display:none !important;
+}
+
+.archive-date {
+    display:block !important;
+    width:100% !important;
+    text-align:left !important;
+}
+
+.archive > a:before {
+    content:"☘";
+    margin-right:10px;
+    color:green;
+}
+
+.archive {
+    margin-bottom:20px;
+}
+
+iframe.center {
+    width:100% !important;
+}
