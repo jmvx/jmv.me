@@ -1,4 +1,4 @@
-@import url("mobile.css") screen and (max-width: 600px);
+@import url("mobile.css") screen and (max-device-width: 600px);
 
 /* Changing some defaults */
 body, p, ul { margin:0; padding:0; }
