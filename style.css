@@ -1,7 +1,7 @@
-@import url("mobile.css") screen and (max-device-width: 600px);
+@import url("mobile.css") screen and (max-device-width: 480px);
 
 /* Changing some defaults */
-body, p, ul { margin:0; padding:0; }
+body, p, ul { margin:0; padding:0;}
 
 body {
     font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
@@ -63,6 +63,7 @@ h2, h3, h4, h5, h6 { font-size:16pt; }
 
 #navigation { 
     font-size:14pt; 
+    padding-left:17px;
 }
 
 #header {
