@@ -6,15 +6,16 @@ description: An archive of all of my blog posts
 
 {% for category in site.categories %}
 <h1>{{ category | first | capitalize }}</h1>
-
     {% for posts in category %}
         {% for post in posts %}
+        {% if post.url %}
         <div class="archive">
             {% if post.date %}
             <div class="archive-date">{{ post.date | date_to_long_string }}</div>
             {% endif %}
             <a href="{{ post.url }}">{{ post.title }}</a>
         </div>
+        {% endif %}
         {% endfor %}
     {% endfor %}
 {% endfor %}
