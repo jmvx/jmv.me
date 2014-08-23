@@ -1,28 +1,33 @@
 /* iPhone, Android rules here */
 
-#container, #content, img.medium, img.double, .double, .excerpt-date, div.timestamp, .archive-date, iframe.center, #site-title, #navigation, #navigation > a, div.thumbnail {
+#container, #content, #site-title {
     width:93% !important;
 }
 
 #site-title {
     font-size:25pt !important;
+    text-align:center !important;
+}
+
+.page-title, h1, .excerpt > a {
+    font-size:18pt !important;
 }
 
 #site-title, #navigation {
     display:block !important;
-    text-align:center;
+    padding:0 !important;
+    margin:0 !important;
 }
 
 #navigation {
     font-size:9pt !important;
-    padding:0 !important;
-    margin:0 !important;
 }
 
-img.medium {
+img.medium, img.small, img.large, iframe.center, img.double, .double, div.thumbnail {
     float:none !important;
-    margin:0 !important;
+    margin:0 0 10px 0 !important;
     padding:0 !important;
+    width:100% !important;
 }
 
 .double {
@@ -52,4 +57,8 @@ div.thumbnail {
 
 .archive {
     margin-bottom:20px;
+}
+
+ul {
+    padding-left:0px !important;
 }
