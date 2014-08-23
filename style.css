@@ -196,18 +196,31 @@ img.right {
     margin-right:0;
 }
 
-img.large {
+img.large, iframe.large {
     width:100%;
 }
 
-img.medium {
-    width:50%;
+iframe.large {
+    height:600px;
+    margin-bottom:20px;
 }
 
-img.small {
-    width:100%;
-    min-height:100%;
-    border:none;
+img.medium, iframe.medium {
+    width:60%;
+}
+
+iframe.medium {
+    height:280px;
+    margin-bottom:20px;
+}
+
+img.small, iframe.small {
+    width:25%;
+}
+
+iframe.small {
+    height:140px;
+    margin-bottom:20px;
 }
 
 .thumbnail {
@@ -218,17 +231,17 @@ img.small {
     float:left;
 }
 
+.thumbnail > img.small {
+    width:100%;
+    min-height:100%;
+    border:none;
+}
+
 img.center, iframe.center {
     float:none;
     display:block;
     margin-left:auto;
     margin-right:auto;
-}
-
-iframe.center {
-    width:500px;
-    height:281px;
-    margin-bottom:20px;
 }
 
 div.pinterest {
