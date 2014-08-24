@@ -223,6 +223,10 @@ iframe.small {
     margin-bottom:20px;
 }
 
+img.front {
+    width:370px;
+}
+
 .thumbnail {
     width:200px;
     height:135px;
