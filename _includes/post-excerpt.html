@@ -3,8 +3,8 @@
     <div class="thumbnail"><img class="small" src="{{ post.image }}" /></div>
     {% endif %}
     <a href="{{ post.url }}">{{ post.title }}</a>
-    {% if post.date %}
-    <div class="excerpt-date">{{ post.date | date_to_long_string }}</div>
+    {% if post.date and page.title != "Portfolio" %}
+        <div class="excerpt-date">{{ post.date | date_to_long_string }}</div>
     {% endif %}
     {{ post.excerpt | truncatewords: 25 }}
 </div>
