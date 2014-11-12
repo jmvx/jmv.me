@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+
+class Planet:
+    def __init__(self, planet_name, semimajor_axis):
+        self.name = planet_name
+        self.smaxis = semimajor_axis
+
+# http://www.windows2universe.org/our_solar_system/planets_orbits_table.html
+mercury = Planet('Mercury', 0.3871)
+venus = Planet('Venus', 0.7233)
+earth = Planet('Earth', 1.000)
+mars = Planet('Mars', 1.5273)
+jupiter = Planet('Jupiter', 5.2028)
+saturn = Planet('Saturn', 9.5388)
+uranus = Planet('Uranus', 19.1914)
+neptune = Planet('Neptune', 30.0611)
+pluto = Planet('Pluto', 39.5294)
+
+# Returns spaceflight time in years
+def spaceflight(start, end):
+    avgsmaxis = (((start.smaxis + end.smaxis)/2)**1.5)/2
+    return avgsmaxis
+
+months = spaceflight(earth,venus)*12
+print "%.1f" % months, "months"
