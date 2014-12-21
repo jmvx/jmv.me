@@ -4,14 +4,20 @@
 body, p, ul { margin:0; padding:0;}
 
 body {
-    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-    background-color:rgb(240,240,240);
+    font-family: Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
+    background-color:white;
     color:black;
     border-top:5px solid gray;
     font-size:14pt;
 }
 
-#content { line-height:150%; }
+#site-title, #page-title, .top-details, .excerpt-date, .author, h1, h2, h3, h4, h5, h6, .excerpt > a, #navigation, .page-title {
+    font-weight:normal;
+}
+
+h1, .excerpt > a { font-size:20pt; }
+
+h2, h3, h4, h5, h6 { font-size:16pt; }
 
 p { margin:0px 0px 20px 0px; }
 
@@ -20,9 +26,8 @@ li { list-style-type:none; }
 img, .thumbnail { border:1px solid #d3d3d3; }
 
 li:before {
-    content:"☘";
+    content:"◇";
     margin-right:10px;
-    color:green;
 }
 
 ul {
@@ -30,19 +35,16 @@ ul {
     padding-left:40px;
 }
 
-a, .separator {
+a {
     text-decoration:none;
     color:gray;
 }
-
-.separator { color:green; }
 
 a:hover { color:black; }
 
 /* Centers blog in middle of page */
 #container {
     margin:0 auto 0 auto;
-    padding-left:20px;
 }
 
 #container, #content {
@@ -50,76 +52,80 @@ a:hover { color:black; }
 }
 
 /* Header */
-#site-title, .top-details, .excerpt-date, .author, h1, h2, h3, h4, h5, h6, .excerpt > a, #navigation, .page-title {
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-weight:normal;
-}
-
-h1, .excerpt > a { font-size:20pt; }
-
-h2, h3, h4, h5, h6 { font-size:16pt; }
-
-#site-title { font-weight:bold; }
-
-#navigation { 
-    font-size:14pt; 
-    padding-left:17px;
-}
-
 #header {
-    height:55px;
-    padding-top:35px;
+  border-bottom:1px solid #d3d3d3; 
+  overflow:hidden;
 }
 
-#site-title, #navigation, #navigation > div {
-    display:inline-block;
+#site-title, .page-title {
+    margin-top:20px;
+    display:block;
+    width:100%;
 }
 
-#navigation > div {
-    display:inline-block;
+.page-title {
+  margin-top:0;
 }
 
 #site-title {
-    font-size:34pt;
+  font-size:40pt;
 }
 
-#navigation > div > a {
-    padding:12px 6px 12px 6px;
-    margin-left:0px;
+img#logo {
+  display:block;
+  border-radius:1000px;
+  margin:20px 20px 20px 0px;
+  width:113px;
+  height:113px;
 }
 
-a.last {
-    padding-right:0px !important;
+#navigation { 
+    width:100%;
+    font-size:14pt;
+    border-bottom:1px solid #d3d3d3;
+    text-align:center;
 }
+
+#navigation > a {
+  width:25%;
+  display:inline-block;
+  margin-left:-6px;
+  border-right:1px solid #d3d3d3;
+  padding-top:30px;
+  padding-bottom:30px;
+}
+
+#navigation > a:last-child {
+  border-right:none;
+}
+
 
 /* Blog Content */
 #content {
-    margin:35px 0 35px 0;
+    margin:25px 0 25px 0;
+    line-height:150%;
 }
 
 .page-title {
     font-size:25pt;
-    margin-bottom:35px;
-    font-weight:bold;
-    line-height:120%;
+    margin-bottom:20px;
 }
 
 .top-details {
     position:relative;
     height:25px;
-    font-size:8pt;
+    font-size:12pt;
     color:gray;
 }
 
 .top-details .timestamp {
     position:absolute;
-    top:-30px;
+    top:-15px;
     left:0;
 }
 
 .bottom-details .pagination {
     text-align:center;
-    font-size:18pt;
     font-style:italic;
     margin-top:40px;
     clear:both;
@@ -132,7 +138,11 @@ p.right { text-align:right; }
 
 p.center { text-align:center; }
 
-.excerpt { clear:both; }
+.excerpt { 
+  clear:both; 
+  overflow:hidden; 
+  margin-bottom:15px;
+}
 
 .excerpt > p { margin-top:5px; }
 
@@ -143,8 +153,9 @@ p.center { text-align:center; }
 .excerpt-date {
     display:inline-block;
     margin-left:20px;
-    font-size:8pt;
+    font-size:12pt;
     color:gray;
+    float:right;
 }
 
 div.blockquote {
@@ -159,9 +170,8 @@ div.blockquote > p, p.author {
 }
 
 .author:before {
-    content:"☘";
+    content:"◇";
     margin-right:18px;
-    color:green;
 }
 
 .author {
@@ -170,13 +180,13 @@ div.blockquote > p, p.author {
 
 /* Archive page */
 .archive-date {
-    width:150px;
+    width:170px;
     display:inline-block;
     text-align:right;
     padding-right:40px;
 }
 
-/* Image Layouts */
+/* Image, iframes, etc. Layouts */
 img { 
     float:left; 
     margin:0 20px 15px 0;
@@ -187,44 +197,37 @@ img.right {
     margin:0 0 15px 20px;
 }
 
-.double {
-    float:none;
+img.double, div.double {
     display:inline-block;
     width:395px;
-    margin-bottom:20px;
     vertical-align:top;
     margin-right:0;
 }
 
-img.large, iframe.large {
+div.double {
+    height:297px;
+    overflow:hidden;
+    margin-bottom:20px;
+}
+
+iframe {
+  display:block;
+  width:60%;
+  height:255px;
+  float:none;
+  margin:0 auto 20px auto;
+}
+
+img.large {
     width:100%;
 }
 
-iframe.large {
-    height:600px;
-    margin-bottom:20px;
-}
-
-img.medium, iframe.medium {
+img.medium {
     width:60%;
 }
 
-iframe.medium {
-    height:280px;
-    margin-bottom:20px;
-}
-
-img.small, iframe.small {
+img.small {
     width:25%;
-}
-
-iframe.small {
-    height:140px;
-    margin-bottom:20px;
-}
-
-img.front {
-    width:370px;
 }
 
 .thumbnail {
@@ -241,7 +244,7 @@ img.front {
     border:none;
 }
 
-img.center, iframe.center {
+img.center {
     float:none;
     display:block;
     margin-left:auto;

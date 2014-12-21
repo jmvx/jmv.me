@@ -5,22 +5,28 @@
 }
 
 #site-title {
-    font-size:25pt !important;
-    text-align:center !important;
+    font-size:20pt !important;
+    padding-top:20px !important;
 }
 
 .page-title, h1, .excerpt > a {
-    font-size:18pt !important;
+    font-size:14pt !important;
 }
 
 #site-title, #navigation {
     display:block !important;
-    padding:0 !important;
-    margin:0 !important;
 }
 
-#navigation {
-    font-size:9pt !important;
+#navigation > a {
+  width:100% !important;
+  border-bottom:1px solid #d3d3d3 !important;
+  border-right:none !important;
+  padding-top:10px !important;
+  padding-bottom:10px !important;
+}
+
+#navigation > a:last-child {
+  border-bottom:none !important; 
 }
 
 img.medium, img.small, img.large, iframe.center, img.double, .double, div.thumbnail {

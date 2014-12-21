@@ -1,0 +1,13 @@
+---
+layout: post
+---
+<!-- Begin Post -->
+{% for i in page.image %}
+<div class="double">
+    <a href="{{ i }}" target="_blank">
+        <img class="double" src="{{ i }}" />
+    </a>
+</div>
+{% endfor %}
+
+{{ content }}

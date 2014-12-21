@@ -1,0 +1,13 @@
+---
+title: "A history of jmv.me"
+categories: portfolio
+layout: post
+image: 
+- /images/mysite4.jpg
+- /images/mysite3.jpg
+- /images/mysite.jpg 
+- /images/mysite2.jpg
+---
+{% for i in page.image %}
+<img class="large" src="{{ i }}" />
+{% endfor %}
