@@ -1,6 +1,9 @@
 <div class="excerpt">
     {% if post.image %}
-    <div class="thumbnail"><img class="small" src="{{ post.image }}" /></div>
+        {% for i in post.image %}
+            <div class="thumbnail"><img class="small" src="{{ i }}" /></div>
+            {% break %}
+        {% endfor %}
     {% endif %}
     <a href="{{ post.url }}">{{ post.title }}</a>
     {% if post.date and page.title != "Portfolio" %}

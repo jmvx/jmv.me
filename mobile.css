@@ -36,8 +36,13 @@ img.medium, img.small, img.large, iframe.center, img.double, .double, div.thumbn
     width:100% !important;
 }
 
-.double {
+div.double {
     display:block !important;
+    height:190px !important;
+}
+
+img.double {
+  display:block;
 }
 
 .excerpt-date, div.timestamp {
