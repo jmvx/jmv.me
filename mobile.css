@@ -13,6 +13,14 @@
     font-size:14pt !important;
 }
 
+.page-title, .excerpt > a {
+  font-weight:bold !important;
+}
+
+h1, h2 {
+  font-style: italic !important;
+}
+
 #site-title, #navigation {
     display:block !important;
 }
@@ -49,6 +57,14 @@ img.double {
     display:block !important;
     margin-left:0px !important;
     font-size:12pt !important;
+}
+
+div.timestamp {
+  line-height:1em !important;
+}
+
+.excerpt-date {
+  width:100% !important;
 }
 
 div.thumbnail {
