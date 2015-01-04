@@ -1,0 +1,20 @@
+<div class="excerpt">
+    {% if post.thumb %}            
+    <div class="thumbnail">
+      {% if post.image %}
+      <img src="/image/{{ post.thumb }}" />
+      {% elsif post.gallery[0] %}
+      <img src="/gallery/{{ post.gallery[0] }}/{{ post.thumb }}" />
+      {% elsif post.gallery %}
+      <img src="/gallery/{{ post.gallery }}/{{ post.thumb }}" />
+      {% else %}
+      <img src="{{ post.thumb }}" />
+      {% endif %}
+    </div>
+    {% endif %}
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    {% if post.date and page.title != "Portfolio" %}
+        <div class="excerpt-date">{{ post.date | date_to_long_string }}</div>
+    {% endif %}
+    {{ post.excerpt | truncatewords: 25 }}
+</div>

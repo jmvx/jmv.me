@@ -1,7 +1,8 @@
 /* iPhone, Android rules here */
 
 #container, #content, #site-title {
-    width:93% !important;
+    width:97% !important;
+    margin-left:5px !important;
 }
 
 #site-title {
@@ -37,7 +38,7 @@ h1, h2 {
   border-bottom:none !important; 
 }
 
-img.medium, img.small, img.large, iframe.center, img.double, .double, div.thumbnail {
+img.medium, img.small, img.large, iframe.center, img.double, .double {
     float:none !important;
     margin:0 0 10px 0 !important;
     padding:0 !important;
@@ -68,7 +69,7 @@ div.timestamp {
 }
 
 div.thumbnail {
-    height:200px !important;
+    display:none;
 }
 
 .archive-date {
@@ -95,4 +96,9 @@ img.front.right {
     padding: 0px !important;
     margin-bottom:25px !important;
     width:100% !important;
+}
+
+div.gallery-item, div.gallery-item > a > img {
+  max-width:94px !important;
+  margin:0 2px 2px 0;
 }

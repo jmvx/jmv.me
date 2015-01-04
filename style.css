@@ -23,8 +23,6 @@ p { margin:0px 0px 20px 0px; }
 
 li { list-style-type:none; }
 
-img, .thumbnail { border:1px solid #d3d3d3; }
-
 li:before {
     content:"◇";
     margin-right:10px;
@@ -75,8 +73,8 @@ img#logo {
   display:block;
   border-radius:1000px;
   margin:20px 20px 20px 0px;
-  width:113px;
-  height:113px;
+  width:100px;
+  height:100px;
 }
 
 #navigation { 
@@ -192,6 +190,8 @@ img {
     margin:0 20px 15px 0;
 }
 
+img, .thumbnail { border:1px solid #d3d3d3; }
+
 img.right {
     float:right;
     margin:0 0 15px 20px;
@@ -202,12 +202,26 @@ img.double, div.double {
     width:395px;
     vertical-align:top;
     margin-right:0;
+    border:none;
+}
+
+img.double {
+  min-height:100%;
+  min-width:100%;
 }
 
 div.double {
     height:297px;
     overflow:hidden;
     margin-bottom:20px;
+}
+
+div.double { 
+  border:1px solid #d3d3d3;
+}
+
+div.double.contact {
+  border:none;
 }
 
 iframe {
@@ -230,17 +244,17 @@ img.small {
     width:25%;
 }
 
-.thumbnail {
-    width:200px;
-    height:135px;
+div.thumbnail {
+    width:100px;
+    height:100px;
     overflow:hidden;
     margin:0 20px 20px 0;
     float:left;
 }
 
-.thumbnail > img.small {
-    width:100%;
+.thumbnail > img {
     min-height:100%;
+    min-width:100%;
     border:none;
 }
 
@@ -253,4 +267,14 @@ img.center {
 
 div.pinterest {
     text-align:center;
+}
+
+/* gallery */
+#gallery {
+  width:100%;
+}
+
+div.gallery-item {
+  display:inline-block;
+  vertical-align:top;
 }

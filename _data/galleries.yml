@@ -1,0 +1,194 @@
+- id: england
+  description: Europe trip 2013, England
+  folder: england
+  images:
+    - image: alan-turing.jpg
+      thumb: alan-turing_thumb.jpg
+      caption: We visited Alan Turing on his birthday at Bletchley Park on June 23.
+    - image: bbc-london.jpg
+      thumb: bbc-london_thumb.jpg
+      caption: The tour guide at the BBC London had us take part in a mock radio show. Ryan played the role of “The Prince” and the staff commented on Ryan’s “California twang”.
+    - image: big-ben-parliament.jpg
+      thumb: big-ben-parliament_thumb.jpg
+      caption: Big Ben and Parliament
+    - image: buckingham-palace.jpg
+      thumb: buckingham-palace_thumb.jpg
+      caption: Buckingham Palace
+    - image: downing-street.jpg
+      thumb: downing-street_thumb.jpg
+      caption: Downing Street
+    - image: gherkin.jpg
+      thumb: gherkin_thumb.jpg
+      caption: The Gherkin
+    - image: hyde-park-boats.jpg
+      thumb: hyde-park-boats_thumb.jpg
+      caption: Paddle Boats in Hyde Park
+    - image: julian-assange.jpg
+      thumb: julian-assange_thumb.jpg
+      caption: We “visited” Julian Assange at the Ecuadorian Embassy.
+    - image: mi6-headquarters.jpg
+      thumb: mi6-headquarters_thumb.jpg
+      caption: We saw the SIS Building (Secret Intelligence Service). It is commonly known as MI6 Headquarters.
+    - image: millennium-wheel.jpg
+      thumb: millennium-wheel_thumb.jpg
+      caption: Millennium Wheel
+    - image: new-scotland-yard.jpg
+      thumb: new-scotland-yard_thumb.jpg
+      caption: New Scotland Yard
+    - image: roman-baths-england.jpg
+      thumb: roman-baths-england_thumb.jpg
+      caption: This photo shows only a small portion of an immense underground Roman Bath house in Bath, England.
+    - image: sherlock-holmes.jpg
+      thumb: sherlock-holmes_thumb.jpg
+      caption: "We arrived just in time for the Sherlock Holmes Museum at 221B Baker Street. However, it wasn’t clear that the line outside the museum was not the line to buy tickets. They denied us admission since they closed the registers before we reached the door. Note to self Buy tickets in the gift shop first, then get in line."
+    - image: stonehenge.jpg
+      thumb: stonehenge_thumb.jpg
+      caption: I checked in at Stonehenge on <a href="https://foursquare.com/v/stonehenge/4baca654f964a520c7003be3" target="_blank">Foursquare</a>.
+    - image: tower-of-london.jpg
+      thumb: tower-of-london_thumb.jpg
+      caption: Our visit to the Tower of London started with a tour led by a Yeoman Warder who talked about the high-profile executions that took place at the tower. Afterwards, we saw the crown jewels, which are located in a large vault. There is a moving walkway to keep visitors from staring at the jewels too long. We weren’t allowed to take pictures of the jewels.
+    - image: westminster-abbey.jpg
+      thumb: westminster-abbey_thumb.jpg
+      caption: Westminster Abbey
+    - image: windsor-castle.jpg
+      thumb: windsor-castle_thumb.jpg
+      caption: We saw the Changing of the Guard at Windsor Castle. We also got yelled at by our tour guide for taking too long on our tour. We almost missed our tour bus… Oops?
+
+- id: france
+  description: Europe trip 2013, France
+  folder: france
+  images:
+  - image: arc-triomphe.jpg
+    thumb: arc-triomphe_thumb.jpg
+    caption: One of my favorite views in Paris is from the top of L’Arc de Triomphe, but it’s not easy to get to. There is a long spiral staircase that brings you to the top. It’s a long way up, so take it slow. There are benches at the top of the stairs for you to sit and catch your breath before finally exiting to the “roof” area of the where you can take pictures of the amazing views.
+  - image: catacombs.jpg
+    thumb: catacombs_thumb.jpg
+    caption: We waited in the rain for hours to walk through the Catacombs.
+  - image: louvre-apple.jpg
+    thumb: louvre-apple_thumb.jpg
+    caption: There is a museum and a mall inside the Louvre. You can also get a neat view of the inverted pyramid from the top floor of the Louvre Apple Store.
+  - image: love-locks.jpg
+    thumb: love-locks_thumb.jpg
+    caption: I googled “locks on bridge in Paris” and it turns out that there are a few of them. Wikipedia lists the Pont des Arts, Passerelle Léopold-Sédar-Senghor, and the Pont de l’Archevêché are three bridges in Paris that have love locks. I don’t know which one we visited, but it was very cute nonetheless.
+  - image: moulin-rouge.jpg
+    thumb: moulin-rouge_thumb.jpg
+    caption: We saw the Moulin Rouge late at night.
+  - image: notre-dame.jpg
+    thumb: notre-dame_thumb.jpg
+    caption: Notre Dame Cathedral is beautiful, but a bit like your average church as tours go. It’s possible to take a tour up in the towers, but we didn’t get a chance to. It’s definitely something I would like to do next time I’m in Paris.
+  - image: paris-opera-house.jpg
+    thumb: paris-opera-house_thumb.jpg
+    caption: As a fan of the Phantom of the Opera, I was drawn to visit the Paris Opera House. (The opera house is also conveniently located across the street from the Paris Apple Store.) Unfortunately we showed up too late and couldn’t finish a full tour. The staff are very strict on closing hours.
+  - image: robbed.jpg
+    thumb: robbed_thumb.jpg
+    caption: Finally, our trip would not be complete without being robbed by two kids at an ATM near our Paris apartment. We weren’t familiar with the machine, which allowed the thieves to withdraw money after we had reclaimed our card and left the scene.
+  - image: ron-mueck.jpg
+    thumb: ron-mueck_thumb.jpg
+    caption: Ron Mueck is a contemporary artist who makes hyperrealistic sculptures that can be very eerie. We weren’t allowed to take pictures in the exhibit.
+  - image: survey-girls.jpg
+    thumb: survey-girls_thumb.jpg
+    caption: The Eiffel Tower is big, but not very interesting. On our way there, we found some scammers preying on some poor tourists. By this time, we were pretty good at identifying their tactics. Beware the “survey girls”.
+  - image: versailles-orangerie.jpg
+    thumb: versailles-orangerie_thumb.jpg
+    caption: We took the RER and spent a day at the Palace at Versailles. The palace was grand, but if you are short on time I would just do a tour of the gardens which are unbelievable. If you arrive in time for Les Grandes Eaux Musicales, they will have soft music playing while you tour the gardens and some mini-Bellagio-esque fountain shows.
+
+- id: scotland
+  description: Europe trip 2013, Scotland
+  folder: scotland
+  images:
+  - image: arthurs-seat.jpg
+    thumb: arthurs-seat_thumb.jpg
+    caption: Next time, we would like to hike to the top of Arthur’s Seat. For this trip to Edinburgh we focused on the Castle.
+  - image: carnivorous-plants.jpg
+    thumb: carnivorous-plants_thumb.jpg
+    caption: Also at the Glasgow Botanic Gardens is a “Killer Plant” exhibit. The Pitcher Plants are my favorites.
+  - image: edinburgh-castle.jpg
+    thumb: edinburgh-castle_thumb.jpg
+    caption: This photo is for my dad. He says he has a picture of himself at Edinburgh Castle somewhere. :)
+  - image: glasgow-goma.jpg
+    thumb: glasgow-goma_thumb.jpg
+    caption: The Glasgow Gallery of Modern Art
+  - image: glasgow-necropolis.jpg
+    thumb: glasgow-necropolis_thumb.jpg
+    caption: The Necropolis in Glasgow
+  - image: mimosa-plant.jpg
+    thumb: mimosa-plant_thumb.jpg
+    caption: We visited the Glasgow Botanic Gardens which featured some very interesting plants. One of them was the Mimosa Plant which moves reacts to your touch when you brush against its leaves.
+  - image: profile.jpg
+    thumb: profile_thumb.jpg
+    caption: Another photo of me at Edinburgh Castle.
+  - image: riverside-museum.jpg
+    thumb: riverside-museum_thumb.jpg
+    caption: The Riverside Museum is a popular transportation museum in Glasgow. One of the exhibits was a replica old-fashioned subway train. Interestingly, the subway trains haven’t changed much… They are still just as small as it looks in the picture.
+  - image: scott-monument.jpg
+    thumb: scott-monument_thumb.jpg
+    caption: Scott Monument
+  - image: worlds-end.jpg
+    thumb: worlds-end_thumb.jpg
+    caption: Thankfully, we didn’t encounter any <a href="http://www.imdb.com/title/tt1213663/" target="_blank">killer robots</a> on the way to The World’s End.
+
+- id: usa-oregon
+  description: Road trip 2013, Oregon
+  folder: usa-oregon
+  images: 
+  - image: brunch-box.jpg
+    thumb: brunch-box_thumb.jpg
+    caption: The best burger in the world is at <a href="http://www.yelp.com/biz/brunch-box-portland-3?nb=1" target="_blank">Brunch Box</a>. “You Can Haz Cheeseburger” is a bacon cheeseburger in between two grilled cheese sandwiches.
+  - image: oregon-hike.jpg
+    thumb: oregon-hike_thumb.jpg
+    caption: We stopped in Oregon for a hike. The path we took led us to an unexpected lonely beach by the ocean. There were a few people nearby bouldering on a large rock.
+  - image: oregon-reservoir.jpg
+    thumb: oregon-reservoir_thumb.jpg
+    caption: This is allegedly the reservoir that <a href="http://simpsons.wikia.com/wiki/Blinky" target="_blank">Blinky</a> the three-eyed fish came from.
+  - image: simple.jpg
+    thumb: simple_thumb.jpg
+    caption: We were invited to tour <a href="https://simple.com/" target="_blank">Simple</a> headquarters while our friend (Principal of Xipiter) was picking up a package.
+  - image: union-station-portland.jpg
+    thumb: union-station-portland_thumb.jpg
+    caption: The apartment we stayed in while visiting Portland was right next to the Union Station.
+  - image: xipiter.jpg
+    thumb: xipiter_thumb.jpg
+    caption: We were invited to tour <a href="http://xipiter.com/" target="_blank">Xipiter</a> headquarters.
+
+- id: usa-washington
+  description: Road trip 2013, Washington
+  folder: usa-washington
+  images:
+  - image: halo-microsoft.jpg
+    thumb: halo-microsoft_thumb.jpg
+    caption: Halo statues in a Microsoft building.
+  - image: space-needle.jpg
+    thumb: space-needle_thumb.jpg
+    caption: We ate dinner at the rotating restaurant in the Space Needle.
+
+- id: skydiving
+  description: Skydiving, 2014
+  folder: skydiving
+  images:
+  - image: skydive-gopro-1.jpg
+    thumb: skydive-gopro-1_thumb.jpg
+    caption: My instructor and photographer were JP and Jordan, respectively. In short, they were the coolest skydivers in Byron and I'm really happy my first skydive was with them.
+  - image: skydive-gopro-2.jpg
+    thumb: skydive-gopro-2_thumb.jpg
+    caption: We flew up to 13,000 feet in a tiny plane. I was honestly more worried about the plane ride than the actual skydive. I sometimes get motion-sickness when I'm on small, bumpy flights. I made it, though... And, I even decided to jump first! The fear hadn't quite hit me yet; I was feeling too badass and was also pretty distracted by the awesome view.
+  - image: skydive-gopro-3.jpg
+    thumb: skydive-gopro-3_thumb.jpg
+    caption: Then JP pushes me out of the plane, and I start to realize what's happening...
+  - image: skydive-gopro-4.jpg
+    thumb: skydive-gopro-4_thumb.jpg
+    caption:
+  - image: skydive-gopro-5.jpg
+    thumb: skydive-gopro-5_thumb.jpg
+    caption: I had mentioned to JP before the jump that I was worried about the feeling you get in your stomach when you suddenly start to fall. To my surprise, he said you don't feel it since you're already moving at high speeds once you're in the airplane! Yay physics!
+  - image: skydive-gopro-6.jpg
+    thumb: skydive-gopro-6_thumb.jpg
+    caption: I give the thumbs up to Jordan 'cause I'm feeling awesome.
+  - image: skydive-gopro-7.jpg
+    thumb: skydive-gopro-7_thumb.jpg
+    caption: This is my final Rock On/Peace Out to Jordan as JP prepares to deploy the parachute.
+  - image: skydive-gopro-8.jpg
+    thumb: skydive-gopro-8_thumb.jpg
+    caption: Shortly after this photo was taken, Jordan parachutes away so he can meet us on the ground later. I will mention, that we had a minor mishap with the parachute when it opened. It got twisted, so we had to kick our legs to untwist ourselves which gave JP a rope burn on his neck.
+  - image: skydive-gopro-9.jpg
+    thumb: skydive-gopro-9_thumb.jpg
+    caption: After we got the parachute twist sorted out, JP let me steer the parachute. It was fun for a bit, but unfortunately my motion sickness started to kick in and I had to stop. All the swooping motions were pretty disorienting. JP took over again, and we slowly glided our way back to the landing pad.
