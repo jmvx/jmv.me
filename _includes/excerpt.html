@@ -2,13 +2,21 @@
     {% if post.thumb %}            
     <div class="thumbnail">
       {% if post.image %}
-      <img src="/image/{{ post.thumb }}" />
+      <a href="{{ post.url }}">
+        <img src="/image/{{ post.thumb }}" />
+      </a>
       {% elsif post.gallery[0] %}
-      <img src="/gallery/{{ post.gallery[0] }}/{{ post.thumb }}" />
+      <a href="{{ post.url }}">
+        <img src="/gallery/{{ post.gallery[0] }}/{{ post.thumb }}" />
+      </a>
       {% elsif post.gallery %}
-      <img src="/gallery/{{ post.gallery }}/{{ post.thumb }}" />
+      <a href="{{ post.url }}">
+        <img src="/gallery/{{ post.gallery }}/{{ post.thumb }}" />
+      </a>
       {% else %}
-      <img src="{{ post.thumb }}" />
+      <a href="{{ post.url }}">
+        <img src="{{ post.thumb }}" />
+      </a>
       {% endif %}
     </div>
     {% endif %}

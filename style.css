@@ -188,9 +188,8 @@ div.blockquote > p, p.author {
 img { 
     float:left; 
     margin:0 20px 15px 0;
+    border:1px solid #d3d3d3;
 }
-
-img, .thumbnail { border:1px solid #d3d3d3; }
 
 img.right {
     float:right;
@@ -250,9 +249,10 @@ div.thumbnail {
     overflow:hidden;
     margin:0 20px 20px 0;
     float:left;
+    border:1px solid #d3d3d3;
 }
 
-.thumbnail > img {
+div.thumbnail > a > img {
     min-height:100%;
     min-width:100%;
     border:none;

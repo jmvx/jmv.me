@@ -7,10 +7,9 @@
 
 #site-title {
     font-size:20pt !important;
-    padding-top:20px !important;
 }
 
-.page-title, h1, .excerpt > a {
+.page-title, h1, h2, .excerpt > a {
     font-size:14pt !important;
 }
 
@@ -35,10 +34,10 @@ h1, h2 {
 }
 
 #navigation > a:last-child {
-  border-bottom:none !important; 
+  border-bottom:none !important;
 }
 
-img.medium, img.small, img.large, iframe.center, img.double, .double {
+img.medium, img.small, img.large, iframe, img.double, .double {
     float:none !important;
     margin:0 0 10px 0 !important;
     padding:0 !important;
@@ -75,12 +74,6 @@ div.thumbnail {
 .archive-date {
     display:block !important;
     text-align:left !important;
-}
-
-.archive > a:before {
-    content:"☘";
-    margin-right:10px;
-    color:green;
 }
 
 .archive {
