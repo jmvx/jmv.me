@@ -8,14 +8,23 @@
     <!-- page description -->
     <meta name="description" content="{{ page.description }}" />
     {% endif %}
+    
+    <!-- stylesheets -->
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <link rel="stylesheet" type="text/css" href="/syntax.css" />
+    
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:300,300italic' rel='stylesheet' type='text/css'>
+    
     <!-- for lightbox gallery -->
     <script src="/lightbox/js/jquery-1.11.0.min.js"></script>
     <script src="/lightbox/js/lightbox.min.js"></script>
     <link href="/lightbox/css/lightbox.css" rel="stylesheet" />
+    
     <!-- google anatlytics -->
     {% include analytics.html %}
+    
     <title>jmv.me
         {% if page.title %} | {{ page.title }}</title>
         {% else %} | {{ site.name }}</title>{% endif %}
@@ -28,19 +37,14 @@
             <img id="logo" src="/logo.jpg" />
             <div id="site-title">{{ site.name }}</div>
             <div class="page-title">
-                {% if page.id and page.categories[0] != "portfolio" %}
-                    Blog
-                {% elsif page.id and page.categories[0] == "portfolio" %}
-                    Portfolio
-                {% elsif page.title %}
-                    {{ page.title }} 
-                {% else %}
-                    Home
-                {% endif %}
+              Math Teacher & Freelance Web Designer
             </div>
         </div>
         <div id="content">
             {{ content }}
+        </div>
+        <div id="footer">
+        {% include license.html %}
         </div>
     </div>
 </body>

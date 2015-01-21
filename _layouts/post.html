@@ -3,9 +3,11 @@ layout: default
 ---
 
 <!-- details at top of post -->
-<div class="page-title">{{ page.title }}</div>
+<div class="post-title">{{ page.title }}</div>
 <div class="top-details">
-    <div class="timestamp">Posted on {{ page.date | date: '%B %-d, %Y' }} in {{ page.categories | array_to_sentence_string | capitalize }}</div>
+    <div class="timestamp">Posted on {{ page.date | date: '%B %-d, %Y' }} in
+      {{ page.categories | join: ", " }}
+    </div>
 </div>
 
 <div class="post">
@@ -16,19 +18,17 @@ layout: default
   
 {% if page.image %}
   {% for i in page.image %}
+    {% if page.image-css == "double" %}
+    <div class="double">
+    {% endif %}
   
-  {% if page.image-css == "double" %}
-  <div class="double">
-  {% endif %}
+    <a href="/image/{{ i }}" target="_blank">
+      <img class="{{ page.image-css }}" src="/image/{{ i }}" />
+    </a>
   
-  <a href="/image/{{ i }}" target="_blank">
-    <img class="{{ page.image-css }}" src="/image/{{ i }}" />
-  </a>
-  
-  {% if page.image-css == "double" %}
-  </div>
-  {% endif %}
-  
+    {% if page.image-css == "double" %}
+    </div>
+    {% endif %}
   {% endfor %}
 {% endif %}
 

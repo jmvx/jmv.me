@@ -5,7 +5,7 @@
   {% else %}
     <span class="previous-none">&#8602; Previous</span>
   {% endif %}
-
+  
   {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &#8605;</a>
   {% else %}

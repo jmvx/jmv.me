@@ -1,5 +1,10 @@
-<a href="/">Home</a>
-<a href="/blog/">Blog</a>
-<a href="/portfolio/">Portfolio</a>
-<!-- <a href="/photos/">Photos</a> -->
-<a href="/archive/">Archive</a>
+{% assign current_page = page.url|replace:'/',' '|split:' '|first|capitalize%}
+
+{% for link in site.navigation %}
+{% if link.text == current_page %}
+{% assign state = 'active' %}
+{% else %}
+{% assign state = 'not-active' %}
+{% endif %}
+<a class="{{ state }}" href="{{ link.url }}" title="{{ link.text }}">{{ link.text }}</a>
+{% endfor %}

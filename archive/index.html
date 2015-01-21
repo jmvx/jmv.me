@@ -11,7 +11,7 @@ description: An archive of all of my blog posts
         {% if post.url %}
         <div class="archive">
             {% if post.date %}
-            <div class="archive-date">{{ post.date | date_to_long_string }}</div>
+            <div class="archive-date">{{ post.date | date: '%B %-d, %Y' }}</div>
             {% endif %}
             <a href="{{ post.url }}">{{ post.title }}</a>
         </div>

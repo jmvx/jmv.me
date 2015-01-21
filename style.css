@@ -7,20 +7,44 @@ body, p, ul {
 }
 
 body {
-  font-family: Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
+  font-family: 'Merriweather', serif;
+  font-weight:300;
   background-color:white;
   color:black;
   border-top:5px solid gray;
-  font-size:14pt;
+  font-size:12pt;
 }
 
-#site-title, #page-title, .top-details, .excerpt-date, .author, h1, h2, h3, h4, h5, h6, .excerpt > a, #navigation, .page-title {
+.featured {
+  font-size:16pt;
+  background-color:#ededed;
+  padding:20px;
+  line-height:20pt;
+}
+
+hr {
+  border:none;
+  border-bottom:1px solid #d3d3d3;
+}
+
+#site-title, .page-title, .post-title, .top-details, .excerpt-date, .author, h1, h2, h3, h4, h5, h6, .excerpt > a, #navigation, .page-title {
     font-weight:normal;
+}
+
+#site-title, .post-title, h1, h2, h3, h4, h5, h6, .excerpt > a, #navigation {
+    font-family: 'Unica One', cursive;
+    color:#0065BD;
+    text-transform: uppercase;
+}
+
+.page-title, div.blockquote, .top-details .timestamp, .bottom-details .pagination, .excerpt-date {
+  color:gray;
+  font-style:italic;
 }
 
 h1, .excerpt > a { font-size:20pt; }
 
-h2, h3, h4, h5, h6 { font-size:16pt; }
+h2, h3, h4, h5, h6 { font-size:18pt; }
 
 p { margin:0px 0px 20px 0px; }
 
@@ -41,7 +65,7 @@ a {
   color:gray;
 }
 
-a:hover { color:black; }
+a:hover, #navigation > a.active { color:#0065BD; }
 
 /* Centers blog in middle of page */
 #container { margin:0 auto 0 auto; }
@@ -51,12 +75,10 @@ a:hover { color:black; }
 /* Header */
 #header { border-bottom:1px solid #d3d3d3; }
 
-#site-title, .page-title {
+#site-title, .page-title, .post-title {
   display:block;
   width:100%;
 }
-
-.page-title { margin-top:0; }
 
 #site-title {
   margin-top:20px;
@@ -95,9 +117,15 @@ a:hover { color:black; }
     line-height:150%;
 }
 
-.page-title {
+.page-title, .post-title {
     font-size:25pt;
     margin-bottom:20px;
+    line-height:25pt;
+}
+
+.page-title {
+  font-size:18pt;
+  margin-bottom:25px;
 }
 
 .top-details {
@@ -167,9 +195,17 @@ div.blockquote > p, p.author {
     font-size:12pt;
 }
 
+#footer {
+  border-top:1px solid #d3d3d3;
+  font-size:10pt;
+  padding-top:20px;
+  padding-bottom:50px;
+  line-height: 20pt;
+}
+
 /* Archive page */
 .archive-date {
-    width:170px;
+    width:200px;
     display:inline-block;
     text-align:right;
     padding-right:40px;
@@ -179,7 +215,11 @@ div.blockquote > p, p.author {
 img { 
     float:left; 
     margin:0 20px 15px 0;
-    border:1px solid #d3d3d3;
+    border: 1px solid #d3d3d3;
+}
+
+img#logo {
+  border:none;
 }
 
 img.right {
@@ -204,10 +244,6 @@ div.double {
     height:297px;
     overflow:hidden;
     margin-bottom:20px;
-}
-
-div.double { 
-  border:1px solid #d3d3d3;
 }
 
 div.double.contact {
@@ -240,7 +276,7 @@ div.thumbnail {
     overflow:hidden;
     margin:0 20px 20px 0;
     float:left;
-    border:1px solid #d3d3d3;
+    border: 1px solid #d3d3d3;
 }
 
 div.thumbnail > a > img {
@@ -269,3 +305,4 @@ div.gallery-item {
   display:inline-block;
   vertical-align:top;
 }
+
