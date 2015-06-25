@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div class="post">
+  
+{% if page.image-css == "double" or page.image-css == "large" %}
+{{ content }}
+{% endif %}
+  
+{% if page.image %}
+  {% for i in page.image %}
+    {% if page.image-css == "double" %}
+    <div class="double">
+    {% endif %}
+  
+    <a href="/image/{{ i }}" target="_blank">
+      <img class="clearfix {{ page.image-css }}" src="/image/{{ i }}" />
+    </a>
+  
+    {% if page.image-css == "double" %}
+    </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if page.image-css != "double" and page.image-css != "large" %}
+{{ content }}
+{% endif %}
+
+
+
+</div>
