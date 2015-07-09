@@ -201,6 +201,7 @@ div.blockquote > p, p.author {
   padding-top:20px;
   padding-bottom:50px;
   line-height: 20pt;
+  clear:both;
 }
 
 /* Archive page */
