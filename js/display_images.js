@@ -1,8 +1,6 @@
 $(document).ready(function() {
   
   var json_link = "https://vast-basin-9405.herokuapp.com/users/1.json"
-  var photo_site = "https://vast-basin-9405.herokuapp.com"
-
   var result = $.getJSON( json_link, {
     format: "json"
   })
