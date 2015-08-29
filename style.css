@@ -311,3 +311,7 @@ div.gallery-item {
   vertical-align:top;
 }
 
+.album {
+  clear:both;
+}
+
